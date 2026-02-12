@@ -1,0 +1,138 @@
+:root {
+      --bg-primary: #FAFAF8;
+      --bg-secondary: #D1D5DB;
+      --bg-third : #D17557;
+      --bg-fourth: #F0EFEB;
+      --text-primary: #141413;
+      --text-secondary: #475467;
+      --text-third: #6B7280;
+}
+* {
+      margin: 0;
+}
+/* -------------- BODY -------------- */
+body {
+      font-family: Inter, sans-serif;
+      width: 100%;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      max-height: 100vh;
+      height: 100%;
+}
+/* -------------- CONTAINER -------------- */
+.container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+}
+/* -------------- HEADER -------------- */
+.header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #FFF;
+      gap: 4px;
+      width: 100%;
+      max-height: 108px;
+      height: 108px;
+}
+.header #icon {
+      width: 43px;
+      height: 52px;
+}
+.header #header-title {
+      font-weight: 400;
+      font-size: 32px;
+}
+/* -------------- INPUT -------------- */
+.input {
+      display: flex;
+      background-color: #FFF;
+      gap: 12px;
+      margin:70px 63px 0 63px;
+}
+.input #ingredient-input {
+      width: 399px;
+      height: 38px;
+      border: 1px solid var(--bg-secondary);
+      border-radius: 6px;
+      padding-left: 13px;
+      align-self: center;
+      outline: none;
+}
+.input #ingredient-btn {
+      width: 183px;
+      height: 38px;
+      background-color: var(--text-primary);
+      color: var(--bg-primary);
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+      padding: 9px 35.5px;
+      border-radius: 6px;
+      border: none;
+      outline: none;
+      cursor: pointer;
+}
+/* -------------- INPUT -------------- */
+.ingredients-container {
+      margin: 48px 63px;
+      width: 584px;
+}
+
+.ingredients-container #list-title {
+      font-weight: 600;
+      font-size: 30px;
+      margin-bottom: 24px;
+}
+.ingredients-container #ingredients-list {
+      color: var(--text-secondary);
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 48px;
+}
+/* -------------- RECIPE -------------- */
+.recipe {
+      display: flex;
+      align-items: center;
+      width: 584px;
+      border: none;
+      border-radius: 8px;
+      background-color: var(--bg-fourth);
+      width: 594px;
+      height: 109px;
+}
+.recipe .text {
+      margin: 28px 42px 28px 56px;
+      width: 340px;
+}
+.recipe .text #question {
+      color: var(--text-primary);
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 8px
+}
+.recipe .text #details {
+      color: var(--text-third);
+      font-weight: 400;
+      font-size: 14px;
+}
+.recipe #generate-btn {
+      background-color: var(--bg-third);
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--bg-primary);
+      padding: 9px 17px;
+      margin-right: 40px;
+      width: 115;
+      cursor: pointer;
+      outline: none;
+}
+button {
+      transition: .5s ease;
+}
+button:hover {
+    transform: scale(1.02);
+}

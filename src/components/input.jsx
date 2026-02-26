@@ -7,30 +7,37 @@ export default function Input() {
             <li key={i}>{i}</li>
       ))
 
-      function addIngredient(event) {
-            event.preventDefault()
-            const formData = new FormData(event.currentTarget)
+      function addIngredient(formData) {
             const newIngredient = formData.get("ingredient")
             setIngredients(previousArray => [...previousArray, newIngredient])
-            document.querySelector("#ingredient-input").value = ""
       }
 
       return (
-           <div> 
-                  <form className="input" onSubmit={addIngredient}>
+           <div className='container'> 
+                  <form className="input" action={addIngredient}>
                         <input type="text" 
                               placeholder="e.g. three eggs" 
                               id="ingredient-input" 
                               name="ingredient"
+                              required
                         />
                         <button id="ingredient-btn">+ Add ingredient</button>
                   </form>  
-                  <div className="ingredients-container">
-                        <h1 id="list-title">Ingredients on hand:</h1>
-                        <ul id="ingredients-list">
+                  {ingredients.length > 0 && <div className="other-container">
+                        <h1 className="title">Ingredients on hand:</h1>
+                        <ul className="ingredients-list">
                               {ingredientsListItems}
                         </ul>
-                  </div>    
+                  </div>}
+
+
+                  {ingredients.length > 2 && <div className="recipe">
+                        <div className="text">
+                              <p id="question">Ready for a recipe?</p>
+                              <p id="details">Generate a recipe from your list of ingredients.</p>
+                        </div>
+                        <button id="generate-btn">Get recipe</button>
+                  </div>}  
             </div> 
       )
 }

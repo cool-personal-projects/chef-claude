@@ -1,7 +1,6 @@
 import Header from "./components/header"
 import Input from "./components/input"
-import List from "./components/list"
-import Recipe from "./components/generate-recipe"
+import Suggestion from "./components/suggestion"
 import "../style.css"
 
 
@@ -10,7 +9,7 @@ export default function Main() {
             <div className="container">
                   <Header/>
                   <Input />
-                  <Recipe/>
+                  <Suggestion/>
             </div>
       )
 }

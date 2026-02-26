@@ -47,7 +47,8 @@ body {
 /* -------------- INPUT -------------- */
 .input {
       display: flex;
-      background-color: #FFF;
+      align-items: center;
+      background-color: var(--bg-primary);
       gap: 12px;
       margin:70px 63px 0 63px;
 }
@@ -74,18 +75,18 @@ body {
       outline: none;
       cursor: pointer;
 }
-/* -------------- INPUT -------------- */
-.ingredients-container {
+/* -------------- INGREDIANTS -------------- */
+.other-container {
       margin: 48px 63px;
       width: 584px;
 }
 
-.ingredients-container #list-title {
+.title {
       font-weight: 600;
       font-size: 30px;
       margin-bottom: 24px;
 }
-.ingredients-container #ingredients-list {
+.ingredients-list {
       color: var(--text-secondary);
       font-weight: 400;
       font-size: 18px;
@@ -135,4 +136,16 @@ button {
 }
 button:hover {
     transform: scale(1.02);
+}
+/* -------------- SUGGESTION -------------- */
+.suggestion {
+      margin: 48px 63px;
+      width: 584px;
+}
+.small-title {
+      margin-bottom: 20px;
+}
+/* -------------- INSTRUCTIONS -------------- */
+.instructions-list {
+      line-height: 3.5rem;
 }

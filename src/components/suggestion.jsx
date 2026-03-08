@@ -1,7 +1,6 @@
-import {React} from 'react'
 
 export default function Suggestion(props) {
-
+      //props.ingredientsRequiered
       return (
             <div className="container">
                   <div className="suggestion">
@@ -17,7 +16,7 @@ export default function Suggestion(props) {
                   <div className="other-container">
                         <h2 className="small-title">Instructions:</h2>
                         <ul className="instructions-list">
-                              {}
+                              {props.intructions}
                         </ul>
                   </div>
             </div>

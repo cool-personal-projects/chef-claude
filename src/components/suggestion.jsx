@@ -1,11 +1,20 @@
+import ReactMarkdown from "react-markdown"
 
 export default function Suggestion(props) {
-      //props.ingredientsRequiered
       return (
-            <div className="container">
-                  <div className="suggestion">
+            <div className="other-container">
+                  <div className="suggested-recipe-container">
+                        <ReactMarkdown>{props.recipe}</ReactMarkdown>
+                  </div>
+            </div>
+            
+      )
+}
+
+/*
+<div className="suggestion">
                         <h1 className="title">Suggested recipe:</h1>
-                        <p id="intro">la moza del papa del mondo</p>
+                        <p id="intro"></p>
                   </div>
                   <div className="other-container">
                         <h2 className="small-title">Ingrediants:</h2>
@@ -18,8 +27,4 @@ export default function Suggestion(props) {
                         <ul className="instructions-list">
                               {props.intructions}
                         </ul>
-                  </div>
-            </div>
-      )
-}
-
+                  </div> */

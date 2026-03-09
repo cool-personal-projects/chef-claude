@@ -7,7 +7,7 @@ const SYSTEM_PROMPT = `
     too many extra ingredients. Format your response in markdown to make 
     it easier to render to a web page
 `
-export async function getRecipeFromMistral(ingredientsArr) {
+export async function getRecipeFromGroq(ingredientsArr) {
     const ingredientsString = ingredientsArr.join(", ")
     try {
         const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {

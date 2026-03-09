@@ -90,7 +90,7 @@ body {
       color: var(--text-secondary);
       font-weight: 400;
       font-size: 18px;
-      line-height: 48px;
+      line-height: 35px;
 }
 /* -------------- RECIPE -------------- */
 .recipe {
@@ -138,14 +138,13 @@ button:hover {
     transform: scale(1.02);
 }
 /* -------------- SUGGESTION -------------- */
-.suggestion {
-      margin: 48px 63px;
-      width: 584px;
+.suggested-recipe-container ul li, .suggested-recipe-container ol li {
+    margin-bottom: 8px;
 }
-.small-title {
-      margin-bottom: 20px;
+.suggested-recipe-container h4, h3, h2, h5, p strong {
+      font-size: 22px;
+      margin: 20px 0 15px 0;
 }
-/* -------------- INSTRUCTIONS -------------- */
-.instructions-list {
-      line-height: 3.5rem;
+.suggested-recipe-container p:nth-child(1)  {
+      font-size: 26px
 }

@@ -1,12 +1,27 @@
 :root {
-      --bg-primary: #FAFAF8;
-      --bg-secondary: #D1D5DB;
-      --bg-third : #D17557;
-      --bg-fourth: #F0EFEB;
-      --text-primary: #141413;
-      --text-secondary: #475467;
-      --text-third: #6B7280;
+  /* FOND DE PAGE (Crème chaleureux au lieu de blanc froid) */
+  --bg-primary: #fcf9f5; /* surface */
+  --surface-container: #f3f1ee;
+  /* COULEUR DE MARQUE (Orange terreux vibrant pour les actions) */
+  --brand-primary: #984220; /* primary */
+  --brand-gradient: #b85936; /* primary-container (pour dégradés optionnels) */
+  
+  /* CONTENEURS & CARTES (Pour le layering "papier") */
+  --bg-card-pure: #ffffff; /* surface-lowest (pour un 'pop' propre) */
+  --bg-card-subtle: #f6f3ef; /* surface-low (pour sections secondaires) */
+  --bg-input: #eae8e4; /* surface-high (plus sombre pour inputs) */
+  
+  /* TEXTE (Noir chaud au lieu de noir pur) */
+  --text-primary: #1c1c1a; /* on-surface */
+  --text-secondary: #56423c; /* on-surface-variant */
+  
+  /* ACCENTS & DÉTAILS */
+  --outline: rgba(137, 114, 107, 0.5); /* outline (pour bordures subtiles) */
+  --text-on-brand: #ffffff; /* on-primary */
+
+  --heder-height: 70px;
 }
+
 * {
       margin: 0;
 }
@@ -14,8 +29,8 @@
 body {
       font-family: Inter, sans-serif;
       width: 100%;
-      background-color: var(--bg-primary);
-      color: var(--text-primary);
+      background-color: var(--bg-primary); /* Nouveau fond crème */
+      color: var(--text-primary); /* Nouveau texte chaud */
       max-height: 100vh;
       height: 100%;
 }
@@ -24,48 +39,70 @@ body {
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin-top: var(--header-height);
 }
 /* -------------- HEADER -------------- */
 .header {
       display: flex;
-      justify-content: center;
       align-items: center;
-      background-color: #FFF;
-      gap: 4px;
+      background-color: rgba(223, 215, 206, 0.8); /* Surface à 80% */ 
+      backdrop-filter: blur(12px); /* Glassmorphism */
+      -webkit-backdrop-filter: blur(12px);
       width: 100%;
+      
       max-height: 108px;
-      height: 108px;
+      height: var(--heder-height);
+      position: sticky;
+      top:0;
+      left:0;
+      z-index: 2;
 }
 .header #icon {
-      width: 43px;
-      height: 52px;
+      margin-right: 20px;
+      margin-left: auto;
+      color: var(--brand-primary); 
 }
-.header #header-title {
-      font-weight: 400;
-      font-size: 32px;
+.logo-chef-claude {
+      font-family: 'Epilogue', sans-serif;
+      font-size: 1.5rem;          
+      font-weight: 700;           
+      font-style: italic;         
+      color: var(--brand-primary); 
+      letter-spacing: -0.025em;
+      margin-left: 10px;
+}
+#fork-icon {
+      margin-left: 20px;
+      color: var(--brand-primary); 
+      font-style: italic;
 }
 /* -------------- INPUT -------------- */
 .input {
       display: flex;
       align-items: center;
-      background-color: var(--bg-primary);
+      background-color: var(--surface-container); 
       gap: 12px;
-      margin:70px 63px 0 63px;
 }
 .input #ingredient-input {
       width: 399px;
       height: 38px;
-      border: 1px solid var(--bg-secondary);
+
+      border: 1px solid var(--outline); 
+      background-color: var(--bg-card-pure);
       border-radius: 6px;
       padding-left: 13px;
       align-self: center;
       outline: none;
+      color: var(--text-primary);
+}
+.input #ingredient-input::placeholder {
+      color: var(--text-secondary);
 }
 .input #ingredient-btn {
       width: 183px;
       height: 38px;
-      background-color: var(--text-primary);
-      color: var(--bg-primary);
+      background-color: var(--brand-primary); 
+      color: var(--text-on-brand);
       font-size: 14px;
       font-weight: 500;
       line-height: 20px;
@@ -76,18 +113,14 @@ body {
       cursor: pointer;
 }
 /* -------------- INGREDIANTS -------------- */
-.other-container {
-      margin: 48px 63px;
-      width: 584px;
-}
-
 .title {
       font-weight: 600;
       font-size: 30px;
       margin-bottom: 24px;
+      color: var(--text-primary);
 }
 .ingredients-list {
-      color: var(--text-secondary);
+      color: var(--text-secondary); 
       font-weight: 400;
       font-size: 18px;
       line-height: 35px;
@@ -99,7 +132,7 @@ body {
       width: 584px;
       border: none;
       border-radius: 8px;
-      background-color: var(--bg-fourth);
+      background-color: var(--bg-primary); 
       width: 594px;
       height: 109px;
 }
@@ -114,20 +147,20 @@ body {
       margin-bottom: 8px
 }
 .recipe .text #details {
-      color: var(--text-third);
+      color: var(--text-secondary); /* Texte secondaire chaud */
       font-weight: 400;
       font-size: 14px;
 }
 .recipe #generate-btn {
-      background-color: var(--bg-third);
+      background-color: var(--brand-primary); 
       border: none;
       border-radius: 8px;
       font-size: 14px;
       font-weight: 600;
-      color: var(--bg-primary);
+      color: var(--text-on-brand);
       padding: 9px 17px;
       margin-right: 40px;
-      width: 115;
+      width: 135px;
       cursor: pointer;
       outline: none;
 }
@@ -136,6 +169,8 @@ button {
 }
 button:hover {
     transform: scale(1.02);
+    /* Optionnel: assombrit légèrement au survol pour plus de vie */
+    filter: brightness(1.1); 
 }
 /* -------------- SUGGESTION -------------- */
 .suggested-recipe-container ul li, .suggested-recipe-container ol li {
@@ -144,7 +179,45 @@ button:hover {
 .suggested-recipe-container h4, h3, h2, h5, p strong {
       font-size: 22px;
       margin: 20px 0 15px 0;
+      color: var(--text-primary);
 }
 .suggested-recipe-container p:nth-child(1)  {
-      font-size: 26px
+      font-size: 26px;
+      color: var(--brand-primary); /* Titre de suggestion en orange */
+}
+.user-componant {
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+
+      background-color: var(--surface-container);
+      border-radius: 15px;
+      padding: 30px 30px; 
+      margin-top: 40px;
+      margin-bottom: 30px;
+      box-shadow: 1px 1px 10px #c7c6c3;
+      width: 600px;
+}
+
+.other-container {
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+
+      background-color: var(--surface-container);
+      border-radius: 15px;
+      padding: 30px 30px; 
+      margin-top: 40px;
+      margin-bottom: 30px;
+      box-shadow: 1px 1px 10px #c7c6c3;
+      width: 600px;
+}
+
+.ingredients-container {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+      margin-top: 20px;
+      width: 584px;;
 }

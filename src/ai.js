@@ -6,6 +6,7 @@ const SYSTEM_PROMPT = `
     additional ingredients they didn't mention, but try not to include 
     too many extra ingredients. Format your response in markdown to make 
     it easier to render to a web page
+    (Warning: If the user passes one or more unusual ingredient Do not provide anything exept that you didn't understand the message.)
 `
 export async function getRecipeFromGroq(ingredientsArr) {
     const ingredientsString = ingredientsArr.join(", ")

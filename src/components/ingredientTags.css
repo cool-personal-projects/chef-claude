@@ -1,0 +1,90 @@
+:root {
+  /* Couleurs tirées du design de Stitch */
+  --chips-text: #1c1c1a; /* on-surface */
+  --chips-label: #89726b; /* outline - pour le titre et les bordures */
+  --chips-icon-bg: #e5e2de; /* surface-container-highest */
+  --chips-bg: #fcf9f5; /* surface */
+}
+
+/* Titre */
+.ingredients-title {
+  color: var(--chips-label);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+  margin-left: 0.5rem; /* Léger décalage pour s'aligner */
+}
+
+/* Liste des tags */
+.tags-list {
+  display: flex;
+  flex-wrap: wrap; /* Pour aller à la ligne si nécessaire */
+  gap: 12px;
+  align-items: center;
+}
+
+/* Le Tag individuel (Pill) */
+.ingredient-tag {
+  display: flex;
+  align-items: center;
+  background-color: var(--chips-bg);
+  border: 1px solid var(--chips-label);
+  border-radius: 9999px; /* rounded-full */
+  padding: 6px 6px 6px 16px; /* padding asymétrique pour l'icône */
+  height: 38px;
+  box-sizing: border-box;
+}
+
+.ingredient-name {
+  color: var(--chips-text);
+  font-size: 1rem;
+  font-weight: 400;
+  margin-right: 12px;
+  text-transform: lowercase; /* Comme dans ton image */
+}
+
+/* Le bouton de suppression (la croix) */
+.remove-btn {
+  background-color: var(--chips-icon-bg);
+  border: none;
+  border-radius: 50%; /* Cercle parfait */
+  width: 26px;
+  height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: var(--chips-label);
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.remove-btn:hover {
+  background-color: #d17557; /* orange-300 pour effet interactif */
+  color: white;
+}
+
+/* Taille de l'icône 'close' */
+.remove-btn .material-symbols-outlined {
+  font-size: 18px;
+}
+
+/* Le bouton 'Add More' (Pointillé) */
+.add-more-btn {
+  color: var(--chips-label);
+  background: transparent;
+  border: 1px dashed var(--chips-label); /* Pointillé */
+  border-radius: 9999px;
+  padding: 6px 20px;
+  height: 38px;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.add-more-btn:hover {
+  background-color: rgba(137, 114, 107, 0.05);
+}
